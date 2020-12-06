@@ -2,6 +2,28 @@
   <head>
     <title>Conferences for Web</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript"> 
+      function validateForm() { 
+      var x = document.myForm.fname.value; 
+      if (document.myForm.fname.value == "") { 
+      alert("Fill in the First Name before Submitting"); 
+      return false; 
+      } 
+      } 
+      
+      function ValidateEmail(inputText) { 
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+      if (inputText.value.match(mailformat)) { 
+      document.form1.text1.focus(); 
+      return true; 
+      } else { 
+      alert("You have entered an invalid email address!"); 
+      document.form1.text1.focus(); 
+      return false; 
+      } 
+      } 
+      
+      </script>
     <link href="wt4_5.css" rel="stylesheet" type="text/css" media="screen" />
     <style>
       h1 {
@@ -20,50 +42,68 @@
     </div>
     &nbsp;&nbsp;
     <br /><br />
-    <form align="center" style="background-color: #b3b3b3;">
-      <h1>Login for Conferences</h1>
-      <tr>
-        <td>
-          <label for="fname"><b>First name:</b></label>
-        </td>
-        <td><input type="text" id="fname" name="fname" /></td>
-      </tr>
-      <br /><br />
+    <form 
+name="myForm" 
+action="#" 
+onsubmit="validateForm()" 
+method="post" 
+align="center" 
+style="background-color: #b3b3b3;" 
+> 
+<h1>Student Login for Conferences</h1> 
+<tr> 
+<td> 
+<label for="fname"><b>First name:</b></label> 
+</td> 
+<td><input type="text" id="fname" name="fname" autofocus /></td> 
+</tr> 
+<br /><br /> 
 
-      <tr>
-        <td>
-          <label for="lname"><b>Last name:</b></label>
-        </td>
-        <td><input type="text" id="lname" name="lname" /></td>
-      </tr>
-      <br /><br />
+<tr> 
+<td> 
+<label for="lname"><b>Last name:</b></label> 
+</td> 
+<td><input type="text" id="lname" name="lname" /></td> 
+</tr> 
+<br /><br /> 
 
-      <tr>
-        <td>
-          <label for="id"><b>Id:</b></label>
-        </td>
-        <td><input type="text" id="id" name="id" /></td>
-      </tr>
-      <br /><br />
+<tr> 
+<td> 
+<label for="id"><b>Id:</b></label> 
+</td> 
+<td><input type="text" id="id" name="id" required /></td> 
+</tr> 
+<br /><br /> 
 
-      <tr>
-        <td>
-          <label for="password"><b>Password:</b></label>
-        </td>
-        <td><input type="password" id="password" name="password" /></td>
-      </tr>
-      <br /><br />
+<tr> 
+<td> 
+<label for="password"><b>Password:</b></label> 
+</td> 
+<td> 
+<input 
+type="password" 
+id="password" 
+name="password" 
+required 
+minlength="10" 
+/> 
+</td> 
+</tr> 
+<br /><br /> 
 
-      <tr>
-        <td><input type="submit" value="Submit" /></td>
-        <td><button type="button">Reset</button></td>
-        <td>
-          <button type="button">
-            <a href="./forgot_password.html">Forgot Password?</a>
-          </button>
-        </td>
-      </tr>
-      <br /><br />
-    </form>
+<tr> 
+<td><input type="submit" value="Submit" onclick="ValidateEmail(document.myForm.id)"/></td> 
+<td> 
+<button type="button" >Reset</button> 
+</td> 
+<td> 
+<button type="button"> 
+<a href="forgot_password.html">Forgot Password?</a> 
+
+</button> 
+</td> 
+</tr> 
+<br /><br /> 
+</form>
   </body>
 </html>

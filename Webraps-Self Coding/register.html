@@ -2,6 +2,17 @@
   <head>
     <title>Conferences for Web</title>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript"> 
+      function Validate() { 
+      var password = document.getElementById("psw").value; 
+      var confirmPassword = document.getElementById("psw-repeat").value; 
+      if (password != confirmPassword) { 
+      alert("Passwords do not match."); 
+      return false; 
+      } 
+      return true; 
+      } 
+      </script> 
     <link href="wt4_5.css" rel="stylesheet" type="text/css" media="screen" />
     <style>
       h1 {
@@ -20,67 +31,81 @@
     </div>
     &nbsp;&nbsp;
     <br /><br />
-    <form align="center" style="background-color: #b3b3b3;">
-        <h1>Register</h1>
-        <p>Please fill in this form to create an account.</p>
-        <hr />
-  
-        <label for="email"><b>Email</b></label>
-        <input
-          type="text"
-          placeholder="Enter Email"
-          name="email"
-          id="email"
-          required
-        />
-  
-        <label for="psw"><b>Password</b></label>
-        <input
-          type="password"
-          placeholder="Enter Password"
-          name="psw"
-          id="psw"
-          required
-        />
-  
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input
-          type="password"
-          placeholder="Repeat Password"
-          name="psw-repeat"
-          id="psw-repeat"
-          required
-        /><br /><br />
-  
-        <input type="checkbox" name="tech" value="Bike" />
-        <label for="vehicle1">Technical Conferences</label>&nbsp;
-        <input type="checkbox" name="nontech" value="Car" />
-        <label for="vehicle2">Non Technical Conferences</label>&nbsp;
-        <input type="checkbox" name="other" value="Boat" checked />
-        <label for="vehicle3">Other Conferences</label><br /><br />
-  
-        <input type="radio" id="male" name="gender" value="male" />
-        <label for="male">Male</label>&nbsp;
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">Female</label>&nbsp;
-        <input type="radio" id="other" name="gender" value="other" />
-        <label for="other">Other</label>
-        <br><br>
-  
-        <input type="radio" id="male" name="tag" value="Student">
-        <label for="male">Student</label>&nbsp;
-        <input type="radio" id="female" name="tag" value="Professional">
-        <label for="female">Professional</label>&nbsp;
-        <input type="radio" id="other" name="tag" value="other">
-        <label for="other">Other</label><br><br>
-        <hr />
-  
-        <p>
-          By creating an account you agree to our <a href="#">Terms & Privacy</a>.
-        </p>
-        <button type="submit">Register</button>
-  
-        <p>Already have an account? <a href="login.html">Sign in</a>.</p>
-      </form>
+    <form align="center" style="background-color: #b3b3b3;" 
+name="myForm1" 
+action="#" 
+onSubmit = "Validate()" 
+method="post"> 
+<h1>Register</h1> 
+<p>Please fill in this form to create an account.</p> 
+<hr /> 
+
+<label for="email"><b>Email</b></label> 
+<input 
+type="text" 
+placeholder="Enter Email" 
+name="email" 
+id="email" 
+required 
+autofocus 
+/> 
+
+<label for="psw"><b>Password</b></label> 
+<input 
+type="password" 
+placeholder="Enter Password" 
+name="psw" 
+id="psw" 
+minlength="10" 
+required 
+/> 
+
+<label for="psw-repeat"><b>Repeat Password</b></label> 
+<input 
+type="password" 
+placeholder="Repeat Password" 
+name="psw-repeat" 
+id="psw-repeat" 
+minlength="10" 
+required 
+/><br /><br /> 
+
+<input type="checkbox" name="tech" value="Bike" /> 
+<label for="vehicle1">Technical Conferences</label>&nbsp; 
+<input type="checkbox" name="nontech" value="Car" /> 
+<label for="vehicle2">Non Technical Conferences</label>&nbsp; 
+<input type="checkbox" name="other" value="Boat" checked /> 
+<label for="vehicle3">Other Conferences</label><br /><br /> 
+
+<input type="radio" id="male" name="gender" value="male" /> 
+<label for="male">Male</label>&nbsp; 
+<input type="radio" id="female" name="gender" value="female" /> 
+<label for="female">Female</label>&nbsp; 
+<input type="radio" id="other" name="gender" value="other" /> 
+<label for="other">Other</label> 
+<br /><br /> 
+
+<input type="radio" id="male" name="tag" value="Student" /> 
+<label for="male">Student</label>&nbsp; 
+<input type="radio" id="female" name="tag" value="Professional" /> 
+<label for="female">Professional</label>&nbsp; 
+<input type="radio" id="other" name="tag" value="other" /> 
+<label for="other">Other</label><br /><br /> 
+
+<textarea id="about" name="about" rows="4" cols="50"> 
+Here, you will learn about various Conferences....for Students. Stay Tuned! 
+</textarea 
+> 
+<hr /> 
+
+<p> 
+By creating an account you agree to our <a href="#">Terms & Privacy</a>. 
+
+</p> 
+<button type="submit" >Register</button> 
+
+<p>Already have an account? <a href="login.html">Sign in</a>.</p> 
+
+</form> 
   </body>
 </html>
